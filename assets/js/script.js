@@ -1,5 +1,32 @@
-var secondsLeft = 100;
+var secondsLeft = 300;
 var timeEl = document.querySelector(".timeEl");
+var questions = [
+ {
+  question: "Arrays in Javascript can be used to store _____:",
+  choices: ['Numbers and strings', 'Other arrays', 'Booleans', 'All of the above'],
+  answer: "All of the above"
+ } 
+];
+
+// var questions = []
+//   {
+//    question: "Commonly used datetypes DO NOT include",
+//    choices: ['Strings', 'Booleans', 'Alerts', 'Numbers'],
+//    answer: "Alerts"
+//   } 
+// ];
+var index = 0
+function display() {
+var current = questions[index]
+
+
+<id 
+
+
+}
+// clear page 
+// add id elements so i can append 
+// pseudo code it 
 
 function setTime() {
   // Sets interval in variable
