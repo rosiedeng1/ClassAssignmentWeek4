@@ -23,7 +23,12 @@ var questions = [
   question: "A very useful tool used during development and debugging for printing content to the debugger is",
   choices: ['Javascript', 'Console log', 'For loops', 'Terminal/Bash'],
   answer: "Console log"
- } 
+ },
+ {
+  question: "The condition within an if/else statement is enclosed within ____",
+  choices: ['quotes', 'Curly Brackets', 'parenthesis', 'square brackets'],
+  answer: "Curly Brackets"
+ }, 
 ];
 console.log(questions[1])
 console.log(questions[1].choices[2])
@@ -102,6 +107,7 @@ function sendMessage() {
   // This is a placeholder function for what you want to do when the quiz ends.
   alert("Quiz Over!");
   // You can also use window.location.href to redirect to the next page.
-  // window.location.href = "next_page.html";
+  window.location.href = "next_page.html";
 }
+
 document.querySelector('#quizcontainer').addEventListener("click", HandleClick)
