@@ -1,27 +1,54 @@
+// Defined variable for length of the quiz 
 var secondsLeft = 300;
+// Specifies the timeEl class from your HTML
 var timeEl = document.querySelector(".timeEl");
+// Creates an array with numerous objects that includes each individual question, choice and answer (consildates the questions together)
 var questions = [
  {
   question: "Arrays in Javascript can be used to store _____:",
   choices: ['Numbers and strings', 'Other arrays', 'Booleans', 'All of the above'],
   answer: "All of the above"
+ },
+ {
+  question: "Commonly used datetypes DO NOT include",
+  choices: ['Strings', 'Booleans', 'Alerts', 'Numbers'],
+  answer: "Alerts"
+ }, 
+ {
+  question: "String values must be enclosed within _____ when being assigned to variables.",
+  choices: ['Commas', 'Curly brackets', 'Quotes', 'Parenthesis'],
+  answer: "Quotes"
+ },
+ {
+  question: "A very useful tool used during development and debugging for printing content to the debugger is",
+  choices: ['Javascript', 'Console log', 'For loops', 'Terminal/Bash'],
+  answer: "Console log"
  } 
 ];
+console.log(questions[1])
+console.log(questions[1].choices[2])
 
-// var questions = []
-//   {
-//    question: "Commonly used datetypes DO NOT include",
-//    choices: ['Strings', 'Booleans', 'Alerts', 'Numbers'],
-//    answer: "Alerts"
-//   } 
-// ];
 var index = 0
 function display() {
+document.querySelector('#quizcontainer').innerHTML=""  
+// Creates variable to help identify which question you are referring to
 var current = questions[index]
+var questionEl = document.createElement('h3')
+questionEl.textContent=current.question
+document.querySelector('#quizcontainer').append(questionEl)
 
+// Creates a forloop for your choices to the questions 
+for (i=0; i<current.choices.length; i++) {
+  var button = document.createElement('button')
+  button.textContent=current.choices[i]
+  document.querySelector('#quizcontainer').append(button)
+}
+}
 
-<id 
-
+function HandleClick(e) {
+console.log(e.target)
+index++ 
+display() 
 
 }
 // clear page 
@@ -34,6 +61,8 @@ function setTime() {
 
   function startQuiz() {
     // Start the quiz by setting the interval and updating the timer
+    document.querySelector('#startScreen').style.display="none"
+    display()
     timerInterval = setInterval(function() {
       secondsLeft--;
       timeEl.textContent = secondsLeft + " seconds left till game is over";
@@ -44,8 +73,21 @@ function setTime() {
         // Calls function to create and append image
         sendMessage();
       }
+    // Amount of time in milliseconds between each interval
     }, 1000);
+
+
+
+    // document.getElementById('incorrect').addEventListener('click', function() {
+    //   sec -= 30;
+    //   document.getElementById('#startscreen').innerHTML='00:'+sec;
+  // });
+  startTimer();
   }
+
+  
+
+
 
   // Add an event listener to the start button
   var startButton = document.getElementById("startButton");
@@ -62,3 +104,4 @@ function sendMessage() {
   // You can also use window.location.href to redirect to the next page.
   // window.location.href = "next_page.html";
 }
+document.querySelector('#quizcontainer').addEventListener("click", HandleClick)
