@@ -1,3 +1,5 @@
+var timerInterval;
+
 // Defined variable for length of the quiz 
 var secondsLeft = 300;
 // Specifies the timeEl class from your HTML
@@ -51,8 +53,31 @@ for (i=0; i<current.choices.length; i++) {
 }
 
 function HandleClick(e) {
-console.log(e.target)
+  console.log(e.target)
 index++ 
+  var correctAnswer = questions[index].answer;
+if (selectedAnswer !== correctAnswer) {
+    // Answer is incorrect.
+}
+
+secondsLeft -= 10;
+
+if (secondsLeft < 0) {
+  secondsLeft = 0;
+}
+
+timeEl.textContent = secondsLeft + " seconds left till game is over";
+
+
+// If there's another question
+if (index < questions.length) {
+  display();
+} else {
+  // End the quiz
+  clearInterval(timerInterval);
+  sendMessage();
+}
+
 display() 
 
 }
@@ -61,8 +86,7 @@ display()
 // pseudo code it 
 
 function setTime() {
-  // Sets interval in variable
-  var timerInterval;
+  // Sets interval in timeInterval variable
 
   function startQuiz() {
     // Start the quiz by setting the interval and updating the timer

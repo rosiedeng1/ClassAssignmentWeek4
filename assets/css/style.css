@@ -13,3 +13,9 @@ body {
 #gameContainer {
     text-align: center;
 }
+
+#startButton {
+    padding-top: 15px;
+    margin-right: 20px;
+    font-size: 20px 
+}
