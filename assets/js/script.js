@@ -50,37 +50,36 @@ for (i=0; i<current.choices.length; i++) {
   button.textContent=current.choices[i]
   document.querySelector('#quizcontainer').append(button)
 }
-}
 
+}
 function HandleClick(e) {
   console.log(e.target)
-index++ 
-  var correctAnswer = questions[index].answer;
-if (selectedAnswer !== correctAnswer) {
-    // Answer is incorrect.
+  if (e.target.matches("button")) {
+    var selectedAnswer = e.target.textContent;
+    var correctAnswer = questions[index].answer;
+    console.log(selectedAnswer)
+    console.log(correctAnswer)
+
+    if (selectedAnswer !== correctAnswer) {
+      // Answer is incorrect, deduct time
+      secondsLeft -= 10;
+
+      if (secondsLeft < 0) {
+        secondsLeft = 0;
+      }
+    }
+    timeEl.textContent = secondsLeft + " seconds left till game is over";
+    index++;
+    if (index < questions.length) {
+      display();
+    } else {
+      clearInterval(timerInterval);
+      sendMessage();
+    }
+  }
 }
 
-secondsLeft -= 10;
 
-if (secondsLeft < 0) {
-  secondsLeft = 0;
-}
-
-timeEl.textContent = secondsLeft + " seconds left till game is over";
-
-
-// If there's another question
-if (index < questions.length) {
-  display();
-} else {
-  // End the quiz
-  clearInterval(timerInterval);
-  sendMessage();
-}
-
-display() 
-
-}
 // clear page 
 // add id elements so i can append 
 // pseudo code it 
@@ -111,7 +110,8 @@ function setTime() {
     //   sec -= 30;
     //   document.getElementById('#startscreen').innerHTML='00:'+sec;
   // });
-  startTimer();
+
+  // startTimer();
   }
 
   
