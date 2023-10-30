@@ -41,7 +41,7 @@ h1 {
 }
 
 #instruction2 {
-font-size: 20px;
+font-size: 25px;
 }
 
 h3 {
@@ -52,6 +52,11 @@ h4 {
  font-size: 30px;
 }
 
+#scoreSubmission {
+font-size: 22px;
+}
+
 #highscoresList {
     font-size: 20px;
 }
+
