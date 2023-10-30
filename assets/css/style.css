@@ -10,6 +10,7 @@ body {
     height: 100vh;
 }
 
+/* Aligns the gameContainer ID to the center of the page */
 #gameContainer {
     text-align: center;
 }
@@ -40,6 +41,7 @@ h1 {
     height: 30%;
 }
 
+/* Display none on instruction2 ID for initial page */
 #instruction2 {
 font-size: 20px;
 text-align: center;
