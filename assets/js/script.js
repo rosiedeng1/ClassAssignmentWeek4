@@ -88,6 +88,8 @@ function setTime() {
   // Sets interval in timeInterval variable
 
   function startQuiz() {
+    document.getElementById("instruction2").style.display = "block";
+
     // Start the quiz by setting the interval and updating the timer
     document.querySelector('#startScreen').style.display="none"
     display()
