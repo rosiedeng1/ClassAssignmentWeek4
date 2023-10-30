@@ -36,8 +36,6 @@ var questions = [
 console.log(questions[1])
 console.log(questions[1].choices[2])
 
-// var questions = document.querySelector(".question")
-
 // Clears page so you can go onto the next question; appended the questions 
 var index = 0
 function display() {
