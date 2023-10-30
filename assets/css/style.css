@@ -31,12 +31,17 @@ h1 {
 }
 
 /* Created flexbox that aligned all the content the center of the page */
+/* Consildated these IDs with the same features  */
 #quizcontainer, #FinalScores{
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
     height: 30%;
+}
+
+#instruction2 {
+font-size: 20px;
 }
 
 h3 {

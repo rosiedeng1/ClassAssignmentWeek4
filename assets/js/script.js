@@ -51,6 +51,7 @@ document.querySelector('#quizcontainer').append(questionEl)
 for (i=0; i<current.choices.length; i++) {
   var button = document.createElement('button')
   button.textContent=current.choices[i]
+  // Appended the button so you click on your answer choice 
   document.querySelector('#quizcontainer').append(button)
 }
 
@@ -82,9 +83,6 @@ function HandleClick(e) {
     }
   }
 }
-
-// add id elements so i can append 
-
 
 function setTime() {
   // Sets interval in timeInterval variable
@@ -168,11 +166,9 @@ document.getElementById("instruction2").style.display = "none";
     });
   }
   
-  // Display the highscores when the page loads
+  // Displays the highscores when the page loads
   displayHighscores();
 
 }
-
-
 
 document.querySelector('#quizcontainer').addEventListener("click", HandleClick)
