@@ -1,40 +1,44 @@
 var timerInterval;
 
 // Defined variable for length of the quiz 
-var secondsLeft = 300;
+var secondsLeft = 200;
 // Specifies the timeEl class from your HTML
 var timeEl = document.querySelector(".timeEl");
+
 // Creates an array with numerous objects that includes each individual question, choice and answer (consildates the questions together)
 var questions = [
  {
   question: "Arrays in Javascript can be used to store _____:",
-  choices: ['Numbers and strings', 'Other arrays', 'Booleans', 'All of the above'],
-  answer: "All of the above"
+  choices: ['1. Numbers and strings', '2. Other arrays', '3. Booleans', '4. All of the above'],
+  answer: "4. All of the above"
  },
  {
   question: "Commonly used datetypes DO NOT include",
-  choices: ['Strings', 'Booleans', 'Alerts', 'Numbers'],
-  answer: "Alerts"
+  choices: ['1. Strings', '2. Booleans', '3. Alerts', '4. Numbers'],
+  answer: "3. Alerts"
  }, 
  {
   question: "String values must be enclosed within _____ when being assigned to variables.",
-  choices: ['Commas', 'Curly brackets', 'Quotes', 'Parenthesis'],
-  answer: "Quotes"
+  choices: ['1. Commas', '2. Curly brackets', '3. Quotes', '4. Parenthesis'],
+  answer: "3. Quotes"
  },
  {
   question: "A very useful tool used during development and debugging for printing content to the debugger is",
-  choices: ['Javascript', 'Console log', 'For loops', 'Terminal/Bash'],
-  answer: "Console log"
+  choices: ['1. Javascript', '2. Console log', '3. For loops', '4. Terminal/Bash'],
+  answer: "2. Console log"
  },
  {
   question: "The condition within an if/else statement is enclosed within ____",
-  choices: ['quotes', 'Curly Brackets', 'parenthesis', 'square brackets'],
-  answer: "Curly Brackets"
+  choices: ['1. Quotes', '2. Curly Brackets', '3. Parenthesis', '4. Square brackets'],
+  answer: "2. Curly Brackets"
  }, 
 ];
 console.log(questions[1])
 console.log(questions[1].choices[2])
 
+// var questions = document.querySelector(".question")
+
+// Clears page so you can go onto the next question; appended the questions 
 var index = 0
 function display() {
 document.querySelector('#quizcontainer').innerHTML=""  
@@ -51,6 +55,7 @@ for (i=0; i<current.choices.length; i++) {
   document.querySelector('#quizcontainer').append(button)
 }
 
+// Manipulated handleclick function so that time can be deducted from quiz if question is answered incorrectly 
 }
 function HandleClick(e) {
   console.log(e.target)
@@ -61,7 +66,7 @@ function HandleClick(e) {
     console.log(correctAnswer)
 
     if (selectedAnswer !== correctAnswer) {
-      // Answer is incorrect, deduct time
+      // If the answer is incorrect, 10 seconds are deducted
       secondsLeft -= 10;
 
       if (secondsLeft < 0) {
@@ -79,10 +84,8 @@ function HandleClick(e) {
   }
 }
 
-
-// clear page 
 // add id elements so i can append 
-// pseudo code it 
+
 
 function setTime() {
   // Sets interval in timeInterval variable
@@ -104,21 +107,12 @@ function setTime() {
     // Amount of time in milliseconds between each interval
     }, 1000);
 
-
-
-    // document.getElementById('incorrect').addEventListener('click', function() {
-    //   sec -= 30;
-    //   document.getElementById('#startscreen').innerHTML='00:'+sec;
-  // });
-
   // startTimer();
   }
 
-  
 
 
-
-  // Add an event listener to the start button
+  // Added an event listener to the start button
   var startButton = document.getElementById("startButton");
   console.log("hi " + startButton)
   startButton.addEventListener("click", startQuiz);
@@ -128,9 +122,9 @@ function setTime() {
 setTime();
 
 function sendMessage() {
-  // This is a placeholder function for what you want to do when the quiz ends.
+// Alert method that notifies quiz is over when quiz ends
   alert("Quiz Over!");
-  // You can also use window.location.href to redirect to the next page.
+  // Window.location.href redirects to the next page.
   window.location.href = "next_page.html";
 }
 

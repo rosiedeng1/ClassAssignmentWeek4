@@ -14,8 +14,27 @@ body {
     text-align: center;
 }
 
-#startButton {
-    padding-top: 15px;
-    margin-right: 20px;
-    font-size: 20px 
+h1 {
+    color: rgb(94, 94, 142);
 }
+
+.instructions {
+    font-family: "papyrus"; 
+
+}
+#startButton {
+    margin-right: 20px; 
+    font-size: 20px;
+    height: 100%;
+
+}
+
+/* Created flexbox that aligned all the content the center of the page */
+#quizcontainer{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 30%;
+}
+
