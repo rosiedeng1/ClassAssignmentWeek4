@@ -123,7 +123,54 @@ function sendMessage() {
 // Alert method that notifies quiz is over when quiz ends
   alert("Quiz Over!");
   // Window.location.href redirects to the next page.
-  window.location.href = "next_page.html";
+// window.location.href = "highscores.html";
+
+
+  document.getElementById("scoreSubmission").style.display = "block";
+  document.getElementById("finalScore").textContent = secondsLeft;
+
+  document.getElementById("saveScoreBtn").addEventListener("click", function() {
+    var initials = document.getElementById("userInitials").value;
+    if (!initials) {
+      alert("Please enter your initials!");
+      return;
+    }
+  
+    var highscores = JSON.parse(localStorage.getItem("highscores")) || [];
+    
+    var newScore = {
+      initials: initials,
+      score: secondsLeft
+    };
+  
+    highscores.push(newScore);
+    
+    // Store only the top 5 scores
+    highscores.sort((a, b) => b.score - a.score);
+    highscores.splice(5);
+  
+    localStorage.setItem("highscores", JSON.stringify(highscores));
+  
+    displayHighscores();
+  });
+  
+  function displayHighscores() {
+    var highscores = JSON.parse(localStorage.getItem("highscores")) || [];
+    var highscoresList = document.getElementById("highscoresList");
+    
+    highscoresList.innerHTML = '';
+    highscores.forEach(score => {
+      var li = document.createElement("li");
+      li.textContent = `${score.initials}: ${score.score}`;
+      highscoresList.appendChild(li);
+    });
+  }
+  
+  // Display the highscores when the page loads
+  displayHighscores();
+
 }
+
+
 
 document.querySelector('#quizcontainer').addEventListener("click", HandleClick)
