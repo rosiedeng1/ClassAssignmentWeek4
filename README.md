@@ -11,13 +11,13 @@ This website can be used by first clicking the Start Button on the quiz to be sh
 ![QuizStartButton](assets/images/QuizStartButton.png)
 ![Questions](assets/images/Questions.png)
 ![QuizTimer](assets/images/QuizTimer.png)
-![Quiz Over Alert](assets/images/Quiz Over Alert.png)
+![Quiz Over Alert](assets/images/QuizOverAlert.png)
 ![Scores](assets/images/Scores.png) 
 
 Instructions for ![QuizStartButton]: When you click on the Start Button, you will be prompted to a series of questions relating to javascript.
 Instructions for ![Questions]: You will have to click on an answer from the list of choices 
 Instructions for ![QuizTimer]: This timer shows the amount of time you have left on your quiz 
-Instructions for ![Quiz Over Alert]: You will be alerted with a quiz is over statement when the quiz is over in which you can press ok 
+Instructions for ![QuizOverAlert]: You will be alerted with a quiz is over statement when the quiz is over in which you can press ok 
 Instructions for ![Scores]: Your scores will be generated and you can click save score after putting your initials down which will be saved under highscores.
 
 Link to live site of the quiz: https://rosiedeng1.github.io/Code-Quiz-Assignment/
