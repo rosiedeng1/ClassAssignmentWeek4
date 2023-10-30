@@ -18,6 +18,7 @@ h1 {
     color: rgb(94, 94, 142);
 }
 
+/* Sets font to the instructions line to papyrus */
 .instructions {
     font-family: "papyrus"; 
 
@@ -30,7 +31,7 @@ h1 {
 }
 
 /* Created flexbox that aligned all the content the center of the page */
-#quizcontainer{
+#quizcontainer, #FinalScores{
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -38,3 +39,14 @@ h1 {
     height: 30%;
 }
 
+h3 {
+    color: rgb(70, 70, 221);
+}
+
+h4 {
+ font-size: 30px;
+}
+
+#highscoresList {
+    font-size: 20px;
+}

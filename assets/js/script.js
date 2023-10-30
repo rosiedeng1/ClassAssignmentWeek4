@@ -39,6 +39,7 @@ console.log(questions[1].choices[2])
 // Clears page so you can go onto the next question; appended the questions 
 var index = 0
 function display() {
+// Allows questions to show sequentially after selecting answer 
 document.querySelector('#quizcontainer').innerHTML=""  
 // Creates variable to help identify which question you are referring to
 var current = questions[index]
@@ -108,8 +109,6 @@ function setTime() {
   // startTimer();
   }
 
-
-
   // Added an event listener to the start button
   var startButton = document.getElementById("startButton");
   console.log("hi " + startButton)
@@ -119,12 +118,14 @@ function setTime() {
 // Initial setup when the page loads
 setTime();
 
+
 function sendMessage() {
 // Alert method that notifies quiz is over when quiz ends
   alert("Quiz Over!");
-  // Window.location.href redirects to the next page.
-// window.location.href = "highscores.html";
 
+// hides questions to only display scores and userInitials
+document.getElementById("quizcontainer").style.display = "none";
+document.getElementById("instruction2").style.display = "none";
 
   document.getElementById("scoreSubmission").style.display = "block";
   document.getElementById("finalScore").textContent = secondsLeft;
@@ -136,6 +137,7 @@ function sendMessage() {
       return;
     }
   
+    // Saves your highscores to a local storage 
     var highscores = JSON.parse(localStorage.getItem("highscores")) || [];
     
     var newScore = {
@@ -145,7 +147,7 @@ function sendMessage() {
   
     highscores.push(newScore);
     
-    // Store only the top 5 scores
+    // Stores only the top 5 scores
     highscores.sort((a, b) => b.score - a.score);
     highscores.splice(5);
   
